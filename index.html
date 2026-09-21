@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Orarul grupei IE-264 pentru săptămânile impară și pară.">
+  <title>Orarul IE-264 | Marius Fornea</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#acasa" aria-label="Acasă - Orarul IE-264">
+        <span class="brand-mark">264</span>
+        <span class="brand-name">Orarul meu</span>
+      </a>
+      <div class="live-status" aria-live="polite">
+        <span class="status-dot"></span>
+        <span id="current-date">Se încarcă data...</span>
+      </div>
+    </header>
+
+    <main id="acasa">
+      <section class="hero-section">
+        <div class="hero-copy">
+          <p class="eyebrow">FEIE · UTM · 2025 / 2026</p>
+          <h1 id="greeting">Bună ziua!</h1>
+          <p class="hero-description">Orarul grupei <strong>IE-264</strong>, pus la locul lui pentru fiecare zi.</p>
+          <form class="visitor-name-form" id="visitor-name-form">
+            <label for="visitor-name">Cum te cheamă?</label>
+            <div class="name-input-row">
+              <input id="visitor-name" type="text" maxlength="30" placeholder="Scrie numele tău" autocomplete="name">
+              <button type="submit">Salvează</button>
+            </div>
+          </form>
+          <div class="hero-meta">
+            <span class="meta-pill"><span class="meta-icon">⌚</span><span id="current-time">00:00</span></span>
+            <span class="meta-pill"><span class="meta-icon">⌖</span>FEIE · UTM</span>
+          </div>
+        </div>
+        <div class="hero-card" aria-label="Rezumatul săptămânii">
+          <span class="hero-card-label">Săptămâna afișată</span>
+          <strong id="week-label">Impară</strong>
+          <span class="hero-card-note">Schimbă rapid mai jos</span>
+        </div>
+      </section>
+
+      <section class="schedule-section" aria-labelledby="schedule-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Planificare săptămânală</p>
+            <h2 id="schedule-title">Orarul tău</h2>
+          </div>
+          <div class="week-switcher" role="group" aria-label="Alege săptămâna">
+            <button class="week-button is-active" data-week="odd" type="button">Săptămâna impară</button>
+            <button class="week-button" data-week="even" type="button">Săptămâna pară</button>
+          </div>
+        </div>
+        <div class="day-filter" role="group" aria-label="Alege ziua">
+          <button class="day-button is-active" data-day="all" type="button">Toate zilele</button>
+          <button class="day-button" data-day="Luni" type="button">Luni</button>
+          <button class="day-button" data-day="Marți" type="button">Marți</button>
+          <button class="day-button" data-day="Miercuri" type="button">Miercuri</button>
+          <button class="day-button" data-day="Joi" type="button">Joi</button>
+          <button class="day-button" data-day="Vineri" type="button">Vineri</button>
+        </div>
+        <div id="schedule-grid" class="schedule-grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Creat de <strong>Marius Fornea</strong></span>
+      <span class="footer-separator">·</span>
+      <span>Student FEIE UTM · IE-264</span>
+    </footer>
+  </div>
+  <div class="prep-modal" id="prep-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <section class="prep-panel" role="dialog" aria-modal="true" aria-labelledby="prep-title">
+      <button class="modal-close" type="button" data-close-modal aria-label="Închide detaliile">×</button>
+      <p class="eyebrow">Pregătire pentru curs</p>
+      <h2 id="prep-title">Materia</h2>
+      <p class="prep-subtitle" id="prep-subtitle">Detalii pentru ora selectată</p>
+      <div class="prep-content" id="prep-content"></div>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
